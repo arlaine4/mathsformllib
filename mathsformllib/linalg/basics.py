@@ -19,7 +19,7 @@ def matrix_addition(A: np.ndarray, B: np.ndarray) -> np.ndarray:
     if A.ndim != 2 or B.ndim != 2:
         raise ValueError("A and B must be 2D matrices")
     if A.shape != B.shape:
-        raise ValueError("A and B must have the same shape")
+        raise AssertionError("A and B must have the same shape")
 
     result = np.zeros_like(A)  # We could take A or B, its the same
     for i in range(result.shape[0]):
@@ -48,7 +48,7 @@ def matrix_multiplication(A: np.ndarray, B: np.ndarray) -> np.ndarray:
     if m != m2:
         raise ValueError(f"inner dimensions must match: {A.shape} vs {B.shape}")
 
-    result = np.zeros_like(A, dtype=float)
+    result = np.zeros((n, p), dtype=float)
     # We iterate of A's dimensions since the order of the multiplication matters,
     # it's first matrix multiplied by the second, not the other way around:
     for i in range(n):
