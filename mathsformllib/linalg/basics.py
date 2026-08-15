@@ -18,6 +18,8 @@ def matrix_addition(A: np.ndarray, B: np.ndarray) -> np.ndarray:
     """
     if A.ndim != 2 or B.ndim != 2:
         raise ValueError("A and B must be 2D matrices")
+    if A.shape != B.shape:
+        raise ValueError("A and B must have the same shape")
 
     result = np.zeros_like(A)  # We could take A or B, its the same
     for i in range(result.shape[0]):

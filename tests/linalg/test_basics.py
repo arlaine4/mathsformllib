@@ -4,7 +4,7 @@ from hypothesis import given
 from hypothesis.extra.numpy import arrays
 from hypothesis import strategies as st
 
-from MathsForMLLib.linalg.basics import (
+from mathsformllib.linalg.basics import (
     matrix_addition,
     matrix_multiplication,
     matrix_by_scalar_multiplication,
